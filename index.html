@@ -16,15 +16,15 @@
 
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="file:///C:/Users/BOK/Desktop/Sem%207/IT2002/Project_assignment/perso/index.html" >Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#">Posts</a>
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#post">Posts</a>
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Contact</a>
                 </div>
             </div>
         </nav>
@@ -40,30 +40,28 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Contact me at someone@example.com</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <h5 class="modal-title" id="exampleModalLabel">Contact me at name@example.com</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                      </button>
+                        </button>
                     </div>
                     <div class="modal-body">
-
-                        <form action="mailto:bokneo1996@gmail.com" method="post" enctype="text/plain">
+                        <form method="get"> 
+                            <h1 class="title">Send Email to name@example.com</h1>
                             <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="name@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="mail">Email address</label>
+                                <label for="mail">Email address:</label>
                                 <input type="email" class="form-control" id="mail" placeholder="name@example.com">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Comment:</label>
-                                <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                                <label for="subject">Email Subject:</label>
+                                <input class="form-control" name="subject" id="subject" type="text" placeholder="Example Email Subject">
                             </div>
-                            <br>
-                            <br>
-                            <input type="submit" value="Send">
-                            <input type="reset" value="Reset">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Email body:</label>
+                                <textarea class="form-control" id="body" name="body" rows="3"></textarea>
+                            </div>
+                        <button type="submit" class="btn btn-secondary" onclick="sendMail()">Send</button>
+                        <button type="reset" class="btn btn-secondary" value="Reset">Reset</button>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -72,25 +70,57 @@
                   </div>
                 </div>
               </div>
-            <!--<a class="btn btn-dark btn-lg" href="mailto: bokneo1996@gmail.com" role="button">Contact me</a>--> 
+
             <p class = "mt-4 md-0"><span id = "date"></span></p>
+
         </div>
 
-        <div class = "container-fluid">
+        <div class = "container-fluid" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
 
-            <h2 class="display-4 text-center">Food Reviews</h2>
+            <h1 id = "post" class="mt-4">Blogs</h1>
+            <hr>
 
-            <div class="card mb-3 mt-4">
+            <div class="card mb-2">
                 <div class="row no-gutters">
                 <div class="col-md-4 text-center">
-                    <img id = "ice-cream" src="Ice-cream.jpg" class="card-img mt-5" alt="...">
+                    <a href="https://www.w3schools.com/"><img id = "ice-cream" src="Ice-cream.jpg" class="card-img"></a>
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body mt-4">
-                        <h5 class="card-title">Best Ice Cream in Town</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">What is Lorem Ipsum?</h5>
                         <p class="card-text text-justify">What is Lorem Ipsum?
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        <p class="card-text"><small class="text-muted">Last updated just now</small></p>
+                            <table style="width:100%">
+                                <tr>
+                                  <th>Value for money</th>
+                                  <td>⭐⭐⭐⭐</th>
+                                </tr>
+                                <tr>
+                                    <th>Cost per pax</th>
+                                    <td>⭐⭐⭐</th>
+                                </tr>
+                              </table>
+                              <p class="card-text"><small class="text-muted">🕛 Last updated just now  |  </small><a href = "mailto:name@example.com">✉ Email</a></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="row no-gutters">
+                <div class="col-md-4 text-center">
+                    <a href="https://www.w3schools.com/"><img id = "ice-cream" src="sky.jpg" class="card-img"></a>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body ">
+                        <h5 class="card-title">What is Lorem Ipsum?</h5>
+                        <p class="card-text text-justify">What is Lorem Ipsum?
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <ol>
+                            <li>Atmosphere is good</li>
+                            <li>🌞</li>
+                        </ol>
+                        <p class="card-text"><small class="text-muted">🕛 Last updated just now  |  </small><a href = "mailto:name@example.com">✉ Email</a></p>
                     </div>
                 </div>
                 </div>
@@ -104,18 +134,13 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     
         <script type = "text/javascript">
-        
-            function checkTime(i) {
 
-                if (i< 10) {
-
-                    i = "0" + i;
-
-                }
-
-                return i;
-
-            }
+            function sendMail() {
+                var subject = document.getElementById("subject").value;
+                var email = document.getElementById("mail").value;
+                var body = document.getElementById("body").value;
+                window.location.href = 'mailto:name@example.com?subject=The subject - ' + subject + ' (' + email + ')' + '&body=' + body;
+            };
 
             function startTime() {
 

@@ -7,15 +7,16 @@
 
 }
 
-#ice-cream{
+img{
 
-    height: 50%;
-    width: 50%;
+    height: 250px;
+    width: 200px;
+    margin-top: 22px;
 
 }
 
 .card {
 
-    height: 300px;
+    height: auto;
 
 }
