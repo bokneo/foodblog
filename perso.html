@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>My first homepage</title>
+
+        <style type = "text/css">
+        
+            #post {
+
+                text-align: center;
+
+            }
+            #navul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .navli {
+                float: left;
+            }
+
+            .navli a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                /* Change the link color to #111 (black) on hover */
+            .navli a:hover {
+                background-color: #111;
+            }
+
+            .centerlize {
+                width: 100%;
+                height: 300px;
+                background-image: url('jumbo-bg.jpg'); 
+                color: white;
+                text-align: center;
+            }
+            p {
+                color: black;
+                }
+
+            h1 {
+                color: black;
+            }
+
+            .h1container {
+
+                padding-top: 60px;
+
+            }
+
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                }
+
+                /* Modal Content/Box */
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto; /* 15% from the top and centered */
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%; /* Could be more or less, depending on screen size */
+                }
+
+                /* The Close Button */
+            .close {
+                color: #000000;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                }
+
+            .close:hover, .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+                }
+            
+            .button {
+                transition-duration: 0.4s;
+                }
+
+            .button:hover {
+                background-color: white;
+                color: black;
+                }
+            
+            .emailform {
+
+                text-align: center;
+
+            }
+
+            textarea {
+                width: 100%;
+                height: 150px;
+                padding: 12px 20px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                background-color: #ffffff;
+                resize: none;
+            }
+            
+            input[type=text] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+
+            input[type=email] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                }
+            
+            .container {
+
+                width: 750px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                height: auto;
+
+            }
+
+            img {
+
+                height: 250px;
+                width: 200px;
+                margin-top: 32px;
+
+                }
+
+            table {
+
+                border-collapse: collapse;
+
+                }
+
+            table, th, td {
+
+                border: 1px solid black;
+                text-align: center;
+
+                }
+
+            tr:hover {
+
+                background-color: #f5f5f5;
+
+                }
+
+        </style>
+
+    </head>
+
+    <body>
+    
+        <div class = "nav">
+            <ul id = "navul">
+                <li class = "navli"><a href="">Home</a></li>
+                <li class = "navli"><a href="#post">Post</a></li>
+                <li class = "navli"><a href="mailto:example@gmail.com">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="centerlize">
+                <h1 class="h1container">Hello, I am Boon Hock!</h1>
+                <p class="lead">If you want to be featured, feel free to contact me via email.</p>
+                <hr class="my-4">
+                <button id="myBtn" class="button" >Contact me</button>
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form class = "emailform" method="get"> 
+                            <h1 class="title">Send Email to name@example.com</h1>
+                            <div class="form-group">
+                                <label for="mail">Email address:</label>
+                                <input type="email" class="form-control" id="mail" placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Email Subject:</label>
+                                <input class="form-control" name="subject" id="subject" type="text" placeholder="Example Email Subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Email body:</label>
+                                <textarea class="form-control" id="body" name="body" rows="3"></textarea>
+                            </div>
+                        <button type="submit" class="button" onclick="sendMail()">Send</button>
+                        <button type="reset" class="button" value="Reset">Reset</button>
+                        </form>
+                    </div>
+        
+                </div>
+                
+                <p><span id = "date"></span></p>
+        </div>
+
+        <h1 id = "post" class="mt-4">Blogs</h1>
+        <hr>
+
+        <div class = "container">
+
+            <a href="https://www.w3schools.com/"><img id = "ice-cream" src="Ice-cream.jpg" class="card-img ml-2 mr-2" alt = "Ice Cream in Singapore"></a>
+                <h5 class="card-title">What is Lorem Ipsum?</h5>
+                <p>What is Lorem Ipsum?
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <table style="width:100%">
+                    <tr>
+                        <th>Value for money</th>
+                        <td>⭐⭐⭐⭐</th>
+                    </tr>
+                    <tr>
+                        <th>Cost per pax</th>
+                        <td>⭐⭐⭐</th>
+                    </tr>
+                </table>
+                <p>🕛 Last updated just now  |  <a href = "mailto:name@example.com">✉ Email</a></p>
+
+        </div>
+
+        <hr>
+
+        <div class = "container">
+
+            <a href="https://www.w3schools.com/"><img id = "sunny" src="sky.jpg" class="card-img ml-2 mr-2" alt = "Sunny day by the beach"></a>
+                <h5 class="card-title">What is Lorem Ipsum?</h5>
+                <p>What is Lorem Ipsum?
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div>
+                    <ol style="width:100%">
+                        <li>Atmosphere is good</li>
+                        <li>🌞</li>
+                    </ol>
+                </div>
+            <p>🕛 Last updated just now  |  <a href = "mailto:name@example.com">✉ Email</a></p>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script type = "text/javascript">
+
+                <!-- The Modal -->
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on the button, open the modal
+                btn.onclick = function() {
+                modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
+
+                function sendMail() {
+                    var subject = document.getElementById("subject").value;
+                    var email = document.getElementById("mail").value;
+                    var body = document.getElementById("body").value;
+                    window.location.href = 'mailto:name@example.com?subject=The subject - ' + subject + ' (' + email + ')' + '&body=' + body;
+                };
+
+                function startTime() {
+
+                    var d = new Date();
+                    document.getElementById("date").innerHTML = d;
+                    t = setTimeout(function() {
+                            startTime()
+                            }, 500);
+
+                }
+                    
+                startTime();
+
+              
+            </script>
+
+    </body>
+</html>
